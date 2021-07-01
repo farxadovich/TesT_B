@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <form action="{% url 'myapp:check' %}">
+        {% for question in questions %}
+        {{ question.text }} {{ forloop.counter }}
+        <br>
+    <fieldset id="{{ question.id }}">
+        {% for choice in question.choice_set.all %}
+        <input type="radio" id="html" name="{{ question.id }}" value="{{ choice.id }}">
+        <label for="html">{{ choice.text }}</label><br>
+        {% endfor %}
+    </fieldset>
+       <hr>
+        {% endfor %}
+    <input type="submit" value="OK">
+    </form>
+</div>
+
+</body>
+</html>

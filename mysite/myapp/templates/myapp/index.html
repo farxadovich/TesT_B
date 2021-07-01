@@ -1,0 +1,29 @@
+{% extends './base.html' %}
+
+{% block title %}<title>Home page</title>{% endblock %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="col" style="margin-top: 20px;">
+        <div class="row row-col 1 row-cols-md-3 g-4">
+            {% for category in object_list %}
+            <div class="col-4">
+                <div class="card h=100 text-white bg-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header"><h2 style="max-width: 18rem;">{{ category.name }}</h2> </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                                <p class="addgkm aoindwponpuio awdjnpaufn9ujp8iojpaoijpio agapijgpiaojrghauprhghjpaoijgpaoirhgjpoi"></p>
+                            <button style="max-width: 18rem;" onclick="location.href='{% url 'myapp:test' category.id %}'"
+                                    type="button" class="btn btn-seccess">Start
+                            </button>
+                        </div>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
